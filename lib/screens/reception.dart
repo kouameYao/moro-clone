@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
-class Epargne1 extends StatefulWidget {
+class ReceptionScren extends StatefulWidget {
   @override
-  _Epargne1State createState() => _Epargne1State();
+  _ReceptionScrenState createState() => _ReceptionScrenState();
 }
 
-class _Epargne1State extends State<Epargne1> {
+class _ReceptionScrenState extends State<ReceptionScren> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -64,37 +63,38 @@ class _Epargne1State extends State<Epargne1> {
                       color: kOrangeColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Center(
-                      child: Text(
-                        "Veuillez recharger votre compte Moro afin de profitez des cartes virtuelles sécurisées pour vos épargnes",
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: kWhiteColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          "assets/icons/041-qr-code.png",
+                          width: 50,
+                          height: 50,
+                          // color: kBlue1Color,
                         ),
-                      ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Icon(
+                              Icons.person,
+                              color: kWhiteColor,
+                              size: 30,
+                            ),
+                            Text(
+                              'Esther Kouamé',
+                              style: TextStyle(
+                                color: kWhiteColor,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
                 )
               ],
-            ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 7),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(kBtnBlueColor)),
-                  onPressed: () {
-                    print('Validate button is pressed to confirm Sécurite');
-                  },
-                  child: Text(
-                    "Approvisionner votre carte Moro",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
-              ),
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -103,76 +103,65 @@ class _Epargne1State extends State<Epargne1> {
                   margin: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
                   decoration: BoxDecoration(
                     color: kWhiteColor,
-                    borderRadius: BorderRadius.only(),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Center(
                     child: Column(
                       children: [
-                        // SizedBox(height: 8),
+                        Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20.0),
+                            child: Image.asset(
+                              "assets/icons/support.png",
+                              width: 50,
+                              height: 50,
+                              // color: kBlue1Color,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text(
+                            "Félicitation !",
+                            style: TextStyle(
+                              color: kBlue3Color,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                          child: Text(
+                            "Vous avez envoyer avec succès !",
+                            style: TextStyle(
+                              color: kBlue3Color,
+                              // fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                          child: Text(
+                            "à Esther Kouamé",
+                            style: TextStyle(
+                              color: kBlue3Color,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                         TextFieldContainer(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(29),
                             child: RaisedButton(
-                              color: kBtnBgColor,
+                              color: kBlue3Color,
                               onPressed: () {
-                                print('Demarrer button is pressed');
+                                print(
+                                    'Validate button is pressed in epargne 1');
                               },
-                              child: ListTile(
-                                title: TextFormField(
-                                  decoration: InputDecoration(
-                                    hintText: "15000",
-                                    hintStyle: TextStyle(color: kWhiteColor),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                                trailing: Text(
-                                  "XOF",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              child: Text(
+                                "Valider",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
                               ),
                             ),
                           ),
-                        ),
-
-                        SizedBox(height: 10),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Container(
-                                height: 20,
-                                width: 40,
-                                child: Image.asset(
-                                  "assets/img/orangem.png",
-                                ),
-                              ),
-                              Container(
-                                height: 20,
-                                width: 40,
-                                child: Image.asset(
-                                  "assets/img/mommtn.png",
-                                ),
-                              ),
-                              Container(
-                                height: 20,
-                                width: 40,
-                                child: Image.asset(
-                                  "assets/img/moovm.png",
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        CustomButton(
-                          text: "Valider",
-                          onPress: () {
-                            print('Validate button is pressed in epargne 1');
-                          },
                         ),
                       ],
                     ),
