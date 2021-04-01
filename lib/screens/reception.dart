@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
+import 'package:solution_moro/widgets/bottom_bar.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
 class ReceptionScren extends StatefulWidget {
@@ -12,7 +13,7 @@ class _ReceptionScrenState extends State<ReceptionScren> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4F9),
+      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -177,77 +178,9 @@ class _ReceptionScrenState extends State<ReceptionScren> {
                 borderRadius: BorderRadius.circular(8),
                 color: kWhiteColor,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Actions(
-                    text: "Acheter",
-                    icon: Icon(Icons.shopping_cart_outlined),
-                    onPress: () {
-                      print("Go to Epargne screen");
-                    },
-                  ),
-                  Actions(
-                    text: "Recevoir",
-                    icon: Icon(Icons.receipt),
-                    onPress: () {
-                      print("Go to Mes cartes screen");
-                    },
-                  ),
-                  Actions(
-                    text: "transfert",
-                    icon: Icon(Icons.send_to_mobile),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                  Actions(
-                    text: "Configurer",
-                    icon: Icon(Icons.settings),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                ],
-              ),
+              child: BottomBar(),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Actions extends StatelessWidget {
-  const Actions({
-    this.text,
-    this.icon,
-    this.onPress,
-  });
-
-  final String text;
-  final Icon icon;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: InkWell(
-        onTap: onPress,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Column(
-            children: [
-              icon,
-              SizedBox(height: 2),
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 11,
-                ),
-              )
-            ],
-          ),
         ),
       ),
     );

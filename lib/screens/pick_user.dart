@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/constants.dart';
+import 'package:solution_moro/widgets/bottom_bar.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
-import 'package:solution_moro/widgets/text_field_container.dart';
 
 class PickUserScreen extends StatefulWidget {
   @override
@@ -14,7 +13,7 @@ class _PickUserScreenState extends State<PickUserScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -117,39 +116,7 @@ class _PickUserScreenState extends State<PickUserScreen> {
                 borderRadius: BorderRadius.circular(8),
                 color: kWhiteColor,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  BottomItem(
-                    text: "Acheter",
-                    icon: Icon(Icons.shopping_cart_outlined),
-                    onPress: () {
-                      print("Go to Epargne screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "Recevoir",
-                    icon: Icon(Icons.receipt),
-                    onPress: () {
-                      print("Go to Mes cartes screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "transfert",
-                    icon: Icon(Icons.send_to_mobile),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "Configurer",
-                    icon: Icon(Icons.settings),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                ],
-              ),
+              child: BottomBar(),
             ),
           ],
         ),

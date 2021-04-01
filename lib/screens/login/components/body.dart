@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/widgets/rounded_button.dart';
-import 'package:solution_moro/widgets/rounded_input_field.dart';
+import 'package:solution_moro/components/rounded_button.dart';
+import 'package:solution_moro/components/rounded_input_field.dart';
 
 import 'background.dart';
 

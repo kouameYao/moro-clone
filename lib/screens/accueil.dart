@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
+import 'package:solution_moro/widgets/bottom_bar.dart';
+import 'package:solution_moro/widgets/bottom_item.dart';
 
 class Accueil extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class _AccueilState extends State<Accueil> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4F9),
+      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -73,21 +75,21 @@ class _AccueilState extends State<Accueil> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Actions(
+                  BottomItem(
                     text: "Epargner",
                     icon: Icon(Icons.format_line_spacing_rounded),
                     onPress: () {
                       print("Go to Epargne screen");
                     },
                   ),
-                  Actions(
+                  BottomItem(
                     text: "Mes cartes",
                     icon: Icon(Icons.credit_card),
                     onPress: () {
                       print("Go to Mes cartes screen");
                     },
                   ),
-                  Actions(
+                  BottomItem(
                     text: "Send/receive",
                     icon: Icon(Icons.send_to_mobile),
                     onPress: () {
@@ -121,7 +123,7 @@ class _AccueilState extends State<Accueil> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               width: size.width,
               height: 50,
               decoration: BoxDecoration(
@@ -131,74 +133,11 @@ class _AccueilState extends State<Accueil> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Actions(
-                    text: "Acheter",
-                    icon: Icon(Icons.shopping_cart_outlined),
-                    onPress: () {
-                      print("Go to Epargne screen");
-                    },
-                  ),
-                  Actions(
-                    text: "Recevoir",
-                    icon: Icon(Icons.receipt),
-                    onPress: () {
-                      print("Go to Mes cartes screen");
-                    },
-                  ),
-                  Actions(
-                    text: "transfert",
-                    icon: Icon(Icons.send_to_mobile),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                  Actions(
-                    text: "Configurer",
-                    icon: Icon(Icons.settings),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
+                  BottomBar(),
                 ],
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Actions extends StatelessWidget {
-  const Actions({
-    this.text,
-    this.icon,
-    this.onPress,
-  });
-
-  final String text;
-  final Icon icon;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: InkWell(
-        onTap: onPress,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Column(
-            children: [
-              icon,
-              SizedBox(height: 2),
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 11,
-                ),
-              )
-            ],
-          ),
         ),
       ),
     );

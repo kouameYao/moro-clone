@@ -13,7 +13,7 @@ class _SendScreenState extends State<SendScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4F9),
+      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [

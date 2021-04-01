@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/constants.dart';
+import 'package:solution_moro/widgets/bottom_item.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
 class Epargne1 extends StatefulWidget {
@@ -13,7 +14,7 @@ class _Epargne1State extends State<Epargne1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4F9),
+      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -135,7 +136,6 @@ class _Epargne1State extends State<Epargne1> {
                             ),
                           ),
                         ),
-
                         SizedBox(height: 10),
                         Padding(
                           padding: EdgeInsets.symmetric(
@@ -181,7 +181,7 @@ class _Epargne1State extends State<Epargne1> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               width: size.width,
               height: 50,
               decoration: BoxDecoration(
@@ -191,28 +191,28 @@ class _Epargne1State extends State<Epargne1> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Actions(
+                  BottomItem(
                     text: "Acheter",
                     icon: Icon(Icons.shopping_cart_outlined),
                     onPress: () {
                       print("Go to Epargne screen");
                     },
                   ),
-                  Actions(
+                  BottomItem(
                     text: "Recevoir",
                     icon: Icon(Icons.receipt),
                     onPress: () {
                       print("Go to Mes cartes screen");
                     },
                   ),
-                  Actions(
+                  BottomItem(
                     text: "transfert",
                     icon: Icon(Icons.send_to_mobile),
                     onPress: () {
                       print("Go to Send screen");
                     },
                   ),
-                  Actions(
+                  BottomItem(
                     text: "Configurer",
                     icon: Icon(Icons.settings),
                     onPress: () {
@@ -223,42 +223,6 @@ class _Epargne1State extends State<Epargne1> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Actions extends StatelessWidget {
-  const Actions({
-    this.text,
-    this.icon,
-    this.onPress,
-  });
-
-  final String text;
-  final Icon icon;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: InkWell(
-        onTap: onPress,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Column(
-            children: [
-              icon,
-              SizedBox(height: 2),
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 11,
-                ),
-              )
-            ],
-          ),
         ),
       ),
     );

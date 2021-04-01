@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/constants.dart';
 
 class TextFieldContainer extends StatelessWidget {
   final Widget child;
+  final Color color;
   const TextFieldContainer({
-    Key key,
     this.child,
-  }) : super(key: key);
+    this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,12 @@ class TextFieldContainer extends StatelessWidget {
       // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       margin: EdgeInsets.symmetric(vertical: 10),
       width: size.width * 0.8,
-      height: 45,
+      height: 40,
       decoration: BoxDecoration(
-        color: kWhiteColor,
+        color: color,
         borderRadius: BorderRadius.circular(29),
       ),
-      child: child,
+      child: Center(child: child),
     );
   }
 }

@@ -16,7 +16,7 @@ class _InscriptionState extends State<Inscription> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4F9),
+      backgroundColor: kBtnBgColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
