@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/components/custom_button.dart';
+import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/widgets/bottom_item.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
 class Epargne1 extends StatefulWidget {
@@ -21,14 +22,7 @@ class _Epargne1State extends State<Epargne1> {
             Stack(
               alignment: AlignmentDirectional.center,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: size.height / 2.3,
-                  decoration: BoxDecoration(
-                    color: kAuthBlueColor,
-                    borderRadius: BorderRadius.only(),
-                  ),
-                ),
+                HeaderContainer(size: size),
                 Positioned(
                   left: 20,
                   top: 0,
@@ -180,48 +174,7 @@ class _Epargne1State extends State<Epargne1> {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              width: size.width,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: kWhiteColor,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  BottomItem(
-                    text: "Acheter",
-                    icon: Icon(Icons.shopping_cart_outlined),
-                    onPress: () {
-                      print("Go to Epargne screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "Recevoir",
-                    icon: Icon(Icons.receipt),
-                    onPress: () {
-                      print("Go to Mes cartes screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "transfert",
-                    icon: Icon(Icons.send_to_mobile),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                  BottomItem(
-                    text: "Configurer",
-                    icon: Icon(Icons.settings),
-                    onPress: () {
-                      print("Go to Send screen");
-                    },
-                  ),
-                ],
-              ),
-            ),
+            BottomBar()
           ],
         ),
       ),

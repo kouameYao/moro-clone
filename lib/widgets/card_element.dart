@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/constants.dart';
 
 class CardElement extends StatelessWidget {
   const CardElement({

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/widgets/bottom_bar.dart';
+import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
 class Accueil extends StatefulWidget {
@@ -20,14 +21,7 @@ class _AccueilState extends State<Accueil> {
             Stack(
               alignment: AlignmentDirectional.center,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: size.height / 2.3,
-                  decoration: BoxDecoration(
-                    color: kAuthBlueColor,
-                    borderRadius: BorderRadius.only(),
-                  ),
-                ),
+                HeaderContainer(size: size),
                 Positioned(
                   left: 20,
                   top: 0,
@@ -39,28 +33,64 @@ class _AccueilState extends State<Accueil> {
                 ),
                 Positioned(
                   right: 15,
-                  top: 15,
+                  top: 20,
                   child: Container(
-                    width: 50,
-                    height: 50,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Image.asset(
                       "assets/img/userPhoto.png",
-                      width: 75,
-                      height: 75,
+                      width: 50,
+                      height: 50,
                     ),
                   ),
                 ),
-                Text(
-                  "SOLDE MORO",
-                  style: TextStyle(
-                    color: kWhiteColor,
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
+                Positioned(
+                  top: size.height / 8,
+                  child: Text(
+                    "SOLDE MORO",
+                    style: TextStyle(
+                      color: kWhiteColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "0 FCFA",
+                      style: TextStyle(
+                        color: kWhiteColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Image.asset(
+                      "assets/img/Flag_of_Côte_d'Ivoire.png",
+                      width: 20,
+                      height: 20,
+                    ),
+                  ],
+                ),
+                positionedCard(
+                  size,
+                  0,
+                  6,
+                  kBlue3Color.withOpacity(0.5),
+                  Colors.grey,
+                ),
+                positionedCard(
+                  size,
+                  0,
+                  7,
+                  kOrangeColor,
+                  kWhiteColor.withOpacity(0.6),
                 ),
               ],
             ),
@@ -122,19 +152,47 @@ class _AccueilState extends State<Accueil> {
                 )),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-              width: size.width,
-              height: 50,
-              decoration: BoxDecoration(
-                // borderRadius: BorderRadius.all(10),
-                color: kWhiteColor,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  BottomBar(),
-                ],
+            BottomBar(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Positioned positionedCard(
+      Size size, double bottom, int divider, Color cardColor, Color imgColor) {
+    return Positioned(
+      bottom: bottom,
+      child: Container(
+        width: size.width * 0.7,
+        height: size.height / divider,
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20.0),
+            topLeft: Radius.circular(20.0),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              "assets/img/logoMoroblanc.png",
+              width: 45,
+              height: 45,
+              color: imgColor,
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  "XXXX XXXX XXXX XXXX",
+                  style: TextStyle(
+                    fontSize: size.width * 0.05,
+                    color: kWhiteColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
           ],

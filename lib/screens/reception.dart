@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/widgets/bottom_bar.dart';
+import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
 class ReceptionScren extends StatefulWidget {
@@ -20,14 +21,7 @@ class _ReceptionScrenState extends State<ReceptionScren> {
             Stack(
               alignment: AlignmentDirectional.center,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: size.height / 2.3,
-                  decoration: BoxDecoration(
-                    color: kAuthBlueColor,
-                    borderRadius: BorderRadius.only(),
-                  ),
-                ),
+                HeaderContainer(size: size),
                 Positioned(
                   left: 20,
                   top: 0,
@@ -170,16 +164,7 @@ class _ReceptionScrenState extends State<ReceptionScren> {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              width: size.width,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: kWhiteColor,
-              ),
-              child: BottomBar(),
-            ),
+            BottomBar(),
           ],
         ),
       ),

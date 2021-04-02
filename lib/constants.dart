@@ -18,3 +18,4 @@ const kGreenColor = Color(0xFF2AC940);
 const kRedColor = Color(0xFFEA0B0B);
 const kTextBlueColor = Color(0xFF30176C);
 const kEpargneStory = Color(0xFF42138E);
+const kQrContainer = Color(0xFF403A48);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/widgets/bottom_bar.dart';
-import 'package:solution_moro/widgets/bottom_item.dart';
+import 'package:solution_moro/components/bottom_bar.dart';
 
 class PickUserScreen extends StatefulWidget {
   @override
@@ -45,33 +44,16 @@ class _PickUserScreenState extends State<PickUserScreen> {
                 ],
               ),
             ),
-            // Container(
-            //   margin: EdgeInsets.symmetric(horizontal: 40),
-            //   decoration: BoxDecoration(
-            //     shape: BoxShape.rectangle,
-            //     // Add border of container here.
-            //   ),
-            //   child: TextField(
-            //     decoration: InputDecoration(
-            //       labelText: "Recherche",
-            //       border: InputBorder.none,
-            //     ),
-            //   ),
-            // ),
-            // Expanded(
-            //   child: SingleChildScrollView(
-            //     child: Container(
-            //       width: double.infinity,
-            //       height: size.height * 0.6,
-            //       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            //       decoration: BoxDecoration(
-            //         color: kWhiteColor,
-            //         borderRadius: BorderRadius.circular(8),
-            //       ),
-            //       child: Center(child: null),
-            //     ),
-            //   ),
-            // ),
+            Container(
+              padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+              child: TextField(
+                decoration: InputDecoration(
+                    labelText: "Recherche",
+                    labelStyle: TextStyle(
+                      color: kBlue3Color,
+                    )),
+              ),
+            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
@@ -79,45 +61,14 @@ class _PickUserScreenState extends State<PickUserScreen> {
                   height: size.height * 0.6,
                   margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    // color: kWhiteColor,
+                    color: kWhiteColor,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        // TextFieldContainer(
-                        //   child: ClipRRect(
-                        //     borderRadius: BorderRadius.circular(29),
-                        //     child: RaisedButton(
-                        //       color: kBlue3Color,
-                        //       onPressed: () {
-                        //         print(
-                        //             'Validate button is pressed in epargne 1');
-                        //       },
-                        //       child: Text(
-                        //         "Envoyer",
-                        //         style: TextStyle(
-                        //             color: Colors.white, fontSize: 18),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // )
-                      ],
-                    ),
-                  ),
+                  child: Center(child: null),
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              width: size.width,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: kWhiteColor,
-              ),
-              child: BottomBar(),
-            ),
+            BottomBar(),
           ],
         ),
       ),

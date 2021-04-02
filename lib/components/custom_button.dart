@@ -21,10 +21,27 @@ class CustomButton extends StatelessWidget {
           onPressed: onPress,
           child: Text(
             text,
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: Colors.white, fontSize: 14),
           ),
         ),
       ),
     );
   }
 }
+
+// ElevatedButton(
+//               style: ElevatedButton.styleFrom(primary: kBlue3Color),
+//               onPressed: () {},
+//               child: Container(
+//                 width: size.width * 0.8,
+//                 child: Center(
+//                   child: Text(
+//                     "Envoyer",
+//                     style: TextStyle(
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 16,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
