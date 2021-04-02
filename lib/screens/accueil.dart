@@ -95,11 +95,11 @@ class _AccueilState extends State<Accueil> {
               ],
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               width: size.width,
               height: 50,
               decoration: BoxDecoration(
-                // borderRadius: BorderRadius.all(10),
+                borderRadius: BorderRadius.circular(8),
                 color: kWhiteColor,
               ),
               child: Row(
@@ -131,10 +131,11 @@ class _AccueilState extends State<Accueil> {
             ),
             Expanded(
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
                 width: double.infinity,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
                   color: kWhiteColor,
-                  borderRadius: BorderRadius.only(),
                 ),
                 child: Center(
                     child: Column(

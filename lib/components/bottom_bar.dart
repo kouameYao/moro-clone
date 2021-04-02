@@ -11,7 +11,7 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       width: size.width,
       height: 50,
       decoration: BoxDecoration(
