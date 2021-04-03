@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/code_pin.dart';
 
 class ReceptionQrCode2 extends StatefulWidget {
   @override
@@ -72,17 +73,15 @@ class _ReceptionQrCode2State extends State<ReceptionQrCode2> {
                   borderRadius: BorderRadius.circular(8)),
               child: Center(
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            labelText: "Montant",
-                            labelStyle: TextStyle(
-                              color: kBlue3Color,
-                            ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Montant",
+                          labelStyle: TextStyle(
+                            color: kBlue3Color,
                           ),
                         ),
                       ),
@@ -97,7 +96,28 @@ class _ReceptionQrCode2State extends State<ReceptionQrCode2> {
             ),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return CodePinScreen(
+                        confirmation:
+                            "Reception qr code 2 demande confirmation",
+                      );
+                    },
+                  ),
+                );
+              },
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(kBlueSeconaryColor),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+              ),
               child: Container(
                 width: size.width * 0.8,
                 child: Center(

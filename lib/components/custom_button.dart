@@ -1,28 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/widgets/text_field_container.dart';
-
-import '../constants.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final Function onPress;
+  final Color color;
+  final Icon icon;
 
   const CustomButton({
     this.text,
     this.onPress,
+    this.color,
+    this.icon,
   });
   @override
   Widget build(BuildContext context) {
-    return TextFieldContainer(
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(29),
-        child: RaisedButton(
-          color: kBlue3Color,
-          onPressed: onPress,
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.white, fontSize: 14),
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: 35,
+      margin: EdgeInsets.symmetric(vertical: 20),
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(color),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
+        ),
+        onPressed: onPress,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(text),
+            SizedBox(width: 20),
+            icon,
+          ],
         ),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
 
-class HeaderContainer extends StatelessWidget {
-  const HeaderContainer({
+class AuthHeaderContainer extends StatelessWidget {
+  const AuthHeaderContainer({
     @required this.size,
   });
 

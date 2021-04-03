@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
-import 'package:solution_moro/widgets/text_field_container.dart';
 
 class ReceptionQrCode3 extends StatefulWidget {
   @override

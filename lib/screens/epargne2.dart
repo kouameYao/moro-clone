@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/art_board6.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
 class Epargne2 extends StatefulWidget {
@@ -69,7 +70,7 @@ class _Epargne2State extends State<Epargne2> {
                 ),
                 positionedCard(
                   size,
-                  5,
+                  0,
                   6,
                   kBlue3Color.withOpacity(0.5),
                   Colors.grey,
@@ -97,7 +98,15 @@ class _Epargne2State extends State<Epargne2> {
                     text: "Achat de carte",
                     icon: Icon(Icons.payment),
                     onPress: () {
-                      print("Go to Epargne screen");
+                      print("Navigue to ArtBoard screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return ArtBoard6();
+                          },
+                        ),
+                      );
                     },
                   ),
                   BottomItem(

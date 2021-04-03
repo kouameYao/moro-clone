@@ -3,6 +3,7 @@ import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/components/new_card_detail_item.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/epargne3.dart';
 import 'package:solution_moro/widgets/card_element.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
@@ -189,6 +190,14 @@ class _ArtBoard8State extends State<ArtBoard8> {
                         child: TextButton(
                           onPressed: () {
                             print('Aller à mon bedou is press');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return Epargne3();
+                                },
+                              ),
+                            );
                           },
                           child: Text(
                             "Aller à Mon Bedou",
@@ -199,6 +208,7 @@ class _ArtBoard8State extends State<ArtBoard8> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),

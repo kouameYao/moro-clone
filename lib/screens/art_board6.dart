@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/art_board7.dart';
 
 class ArtBoard6 extends StatefulWidget {
   @override
@@ -94,7 +95,15 @@ class _ArtBoard6State extends State<ArtBoard6> {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(kBtnBlueColor)),
                   onPressed: () {
-                    print('Validate button is pressed to confirm Sécurite');
+                    print('Navigue to ArtBoard 7');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return ArtBoard7();
+                        },
+                      ),
+                    );
                   },
                   child: Text(
                     "Ajouter une nouvelle carte virtuelle",

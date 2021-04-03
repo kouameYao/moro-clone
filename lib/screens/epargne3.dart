@@ -116,8 +116,10 @@ class _Epargne3State extends State<Epargne3> {
                   Icon(Icons.local_activity_outlined, color: kBlue3Color),
                   SizedBox(width: 10),
                   Text(
-                    "Mes carte virtuelle visa Moro Epargne",
-                    style: TextStyle(color: kBlue3Color),
+                    "Mes cartes virtuelles visa Moro Epargne",
+                    style: TextStyle(
+                      color: kBlue3Color,
+                    ),
                   ),
                 ],
               ),

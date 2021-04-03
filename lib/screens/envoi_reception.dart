@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/reception_qrCode1.dart';
+import 'package:solution_moro/screens/scan_qrCode.dart';
 
-class SendScreen extends StatefulWidget {
+class EnvoiReception extends StatefulWidget {
   @override
-  _SendScreenState createState() => _SendScreenState();
+  _EnvoiReceptionState createState() => _EnvoiReceptionState();
 }
 
-class _SendScreenState extends State<SendScreen> {
+class _EnvoiReceptionState extends State<EnvoiReception> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -70,13 +72,24 @@ class _SendScreenState extends State<SendScreen> {
                               ),
                             ),
                             SizedBox(height: 20),
-                            Text(
-                              '1 125 FCFA',
-                              style: TextStyle(
-                                color: kWhiteColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "1 125 FCFA",
+                                  style: TextStyle(
+                                    color: kWhiteColor,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(width: 5),
+                                Image.asset(
+                                  "assets/img/Flag_of_Côte_d'Ivoire.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                              ],
                             ),
                           ],
                         )
@@ -93,13 +106,31 @@ class _SendScreenState extends State<SendScreen> {
                   size: size,
                   text: "via votre lien",
                   icon: Icon(Icons.logout),
-                  press: () {},
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return ReceptionQrCode1();
+                        },
+                      ),
+                    );
+                  },
                 ),
                 OperationItem(
                   size: size,
                   text: "Qr code",
                   icon: Icon(Icons.qr_code),
-                  press: () {},
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return ScanQrCode();
+                        },
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

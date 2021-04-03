@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/reception_qrCode2.dart';
 
-class PickUserScreen extends StatefulWidget {
+class ReceptionQrCode1 extends StatefulWidget {
   @override
-  _PickUserScreenState createState() => _PickUserScreenState();
+  _ReceptionQrCode1State createState() => _ReceptionQrCode1State();
 }
 
-class _PickUserScreenState extends State<PickUserScreen> {
+class _ReceptionQrCode1State extends State<ReceptionQrCode1> {
+  var _repertoire = [
+    {"nom": "Aymard S. Diom"},
+    {"nom": "Jean J. Kouamé"},
+    {"nom": "Ingrid E. Sabine"},
+    {"nom": "Amanda C. Moyenga"},
+    {"nom": "Diomandé Souley."},
+    {"nom": "Jean J. Kouamé"},
+    {"nom": "Ingrid E. Sabine"},
+    {"nom": "Amanda C. Moyenga"},
+    {"nom": "Diomandé Souley."},
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -64,7 +76,29 @@ class _PickUserScreenState extends State<PickUserScreen> {
                     color: kWhiteColor,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Center(child: null),
+                  child: Center(
+                      child: ListView.separated(
+                    itemCount: _repertoire.length,
+                    separatorBuilder: (_, __) => Divider(height: 0.5),
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          print("Go to Reception qrcode 2 Screen");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return ReceptionQrCode2();
+                              },
+                            ),
+                          );
+                        },
+                        child: ListTile(
+                          title: Center(child: Text(_repertoire[index]['nom'])),
+                        ),
+                      );
+                    },
+                  )),
                 ),
               ),
             ),

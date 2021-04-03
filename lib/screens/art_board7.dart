@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/art_board8.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
-class NouvelleCarte extends StatefulWidget {
+class ArtBoard7 extends StatefulWidget {
   @override
-  _NouvelleCarteState createState() => _NouvelleCarteState();
+  _ArtBoard7State createState() => _ArtBoard7State();
 }
 
-class _NouvelleCarteState extends State<NouvelleCarte> {
+class _ArtBoard7State extends State<ArtBoard7> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -95,7 +96,7 @@ class _NouvelleCarteState extends State<NouvelleCarte> {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(kBtnBlueColor)),
                   onPressed: () {
-                    print('Validate button is pressed to confirm Sécurite');
+                    print('Navigue to ArtBoard 7');
                   },
                   child: Text(
                     "Information Personnalisées",
@@ -115,6 +116,7 @@ class _NouvelleCarteState extends State<NouvelleCarte> {
                 child: Center(
                   child: Column(
                     children: [
+                      SizedBox(height: 20),
                       TextFieldContainer(
                         color: kBtnBgColor,
                         child: Text(
@@ -125,6 +127,7 @@ class _NouvelleCarteState extends State<NouvelleCarte> {
                               fontSize: 14),
                         ),
                       ),
+                      SizedBox(height: 20),
                       TextFieldContainer(
                         color: kBtnBgColor,
                         child: Row(
@@ -146,11 +149,20 @@ class _NouvelleCarteState extends State<NouvelleCarte> {
                           ],
                         ),
                       ),
+                      SizedBox(height: 20),
                       TextFieldContainer(
                         color: kBlue3Color,
                         child: TextButton(
                           onPressed: () {
-                            print('Validate is press');
+                            print('Validate is press. Navigue to ArtBoard8');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return ArtBoard8();
+                                },
+                              ),
+                            );
                           },
                           child: Text(
                             "Valider",

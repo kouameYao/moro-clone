@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/envoi_reception.dart';
+import 'package:solution_moro/screens/epargne1.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
-class Accueil extends StatefulWidget {
+class Dashboard extends StatefulWidget {
   @override
-  _AccueilState createState() => _AccueilState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _AccueilState extends State<Accueil> {
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -110,6 +112,14 @@ class _AccueilState extends State<Accueil> {
                     icon: Icon(Icons.format_line_spacing_rounded),
                     onPress: () {
                       print("Go to Epargne screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Epargne1();
+                          },
+                        ),
+                      );
                     },
                   ),
                   BottomItem(
@@ -124,6 +134,14 @@ class _AccueilState extends State<Accueil> {
                     icon: Icon(Icons.send_to_mobile),
                     onPress: () {
                       print("Go to Send screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return EnvoiReception();
+                          },
+                        ),
+                      );
                     },
                   ),
                 ],

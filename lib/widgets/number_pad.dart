@@ -14,57 +14,37 @@ class NumberPad extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Container(
-            height: MediaQuery.of(context).size.height * 0.11,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                buildNumber(1),
-                buildNumber(2),
-                buildNumber(3),
-              ],
-            ),
+          NumberRows(
+            size: size,
+            children: [
+              buildNumber(1),
+              buildNumber(2),
+              buildNumber(3),
+            ],
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.11,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                buildNumber(4),
-                buildNumber(5),
-                buildNumber(6),
-              ],
-            ),
+          NumberRows(
+            size: size,
+            children: [
+              buildNumber(4),
+              buildNumber(5),
+              buildNumber(6),
+            ],
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.11,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                buildNumber(7),
-                buildNumber(8),
-                buildNumber(9),
-              ],
-            ),
+          NumberRows(
+            size: size,
+            children: [
+              buildNumber(7),
+              buildNumber(8),
+              buildNumber(9),
+            ],
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.11,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                buildEmptySpace(),
-                buildNumber(0),
-                buildBackspace(),
-              ],
-            ),
+          NumberRows(
+            size: size,
+            children: [
+              buildEmptySpace(),
+              buildNumber(0),
+              buildBackspace(),
+            ],
           ),
         ],
       ),
@@ -127,6 +107,29 @@ class NumberPad extends StatelessWidget {
   Widget buildEmptySpace() {
     return Expanded(
       child: Container(),
+    );
+  }
+}
+
+class NumberRows extends StatelessWidget {
+  const NumberRows({
+    @required this.size,
+    @required this.children,
+  });
+
+  final Size size;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.11,
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: children,
+      ),
     );
   }
 }

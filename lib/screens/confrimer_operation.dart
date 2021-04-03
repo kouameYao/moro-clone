@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/envoi_reception.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
-class ReceptionScren extends StatefulWidget {
+class ConfirmerOperation extends StatefulWidget {
   @override
-  _ReceptionScrenState createState() => _ReceptionScrenState();
+  _ConfirmerOperationState createState() => _ConfirmerOperationState();
 }
 
-class _ReceptionScrenState extends State<ReceptionScren> {
+class _ConfirmerOperationState extends State<ConfirmerOperation> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -141,23 +143,21 @@ class _ReceptionScrenState extends State<ReceptionScren> {
                             ),
                           ),
                         ),
-                        TextFieldContainer(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(29),
-                            child: RaisedButton(
-                              color: kBlue3Color,
-                              onPressed: () {
-                                print(
-                                    'Validate button is pressed in epargne 1');
-                              },
-                              child: Text(
-                                "Valider",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
+                        CustomButton(
+                          text: "             Terminé",
+                          onPress: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return EnvoiReception();
+                                },
                               ),
-                            ),
-                          ),
-                        ),
+                            );
+                          },
+                          color: kBlue3Color,
+                          icon: Icon(null),
+                        )
                       ],
                     ),
                   ),
