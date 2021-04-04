@@ -11,7 +11,6 @@ const kBlueLigthColor = Color(0xFF2C1059);
 const kIndigoColor = Color(0xFFFFB300);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kBlackColor = Color(0xFF000000);
-const kBlue1Color = Color(0xFF551FA2);
 const kBtnBlueColor = Color(0xFF5917B9);
 const kBlue3Color = Color(0xFF1B0837);
 const kGreenColor = Color(0xFF2AC940);

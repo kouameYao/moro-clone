@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/screens/reception_qrCode3.dart';
+import 'package:solution_moro/screens/accueil2.dart';
 
 class ScanQrCode extends StatefulWidget {
   @override
@@ -53,8 +53,6 @@ class _ScanQrCodeState extends State<ScanQrCode> {
               ),
               child: Image.asset(
                 "assets/icons/041-qr-code.png",
-                // width: 200,
-                // height: 200,
               ),
             ),
             SizedBox(
@@ -67,7 +65,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
                   context,
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ReceptionQrCode3();
+                      return Accueil2();
                     },
                   ),
                 );

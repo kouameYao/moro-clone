@@ -62,8 +62,9 @@ class _Epargne1State extends State<Epargne1> {
                   child: Center(
                     child: Text(
                       "Veuillez recharger votre compte Moro afin de profitez des cartes virtuelles sécurisées pour vos épargnes",
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 14,
                         color: kWhiteColor,
                       ),
                     ),
@@ -86,104 +87,102 @@ class _Epargne1State extends State<Epargne1> {
                 },
                 child: Text(
                   "Approvisionner votre carte Moro",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
             ),
           ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                  borderRadius: BorderRadius.only(),
-                ),
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(height: 10),
-                      TextFieldContainer(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(29),
-                          child: RaisedButton(
-                            color: kBtnBgColor,
-                            onPressed: () {
-                              print('Demarrer button is pressed');
-                            },
-                            child: Center(
-                              child: ListTile(
-                                title: TextFormField(
-                                  decoration: InputDecoration(
-                                    hintText: "15000",
-                                    hintStyle: TextStyle(color: kWhiteColor),
-                                    border: InputBorder.none,
-                                  ),
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 8),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: kWhiteColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    TextFieldContainer(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(29),
+                        child: RaisedButton(
+                          color: kBtnBgColor,
+                          onPressed: () {
+                            print('Demarrer button is pressed');
+                          },
+                          child: Center(
+                            child: ListTile(
+                              title: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: "15000",
+                                  hintStyle: TextStyle(color: kWhiteColor),
+                                  border: InputBorder.none,
                                 ),
-                                trailing: Text(
-                                  "XOF",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              ),
+                              trailing: Text(
+                                "XOF",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 40,
-                              child: Image.asset(
-                                "assets/img/orangem.png",
-                              ),
+                    ),
+                    SizedBox(height: 10),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 20,
+                            width: 40,
+                            child: Image.asset(
+                              "assets/img/orangem.png",
                             ),
-                            Container(
-                              height: 20,
-                              width: 40,
-                              child: Image.asset(
-                                "assets/img/mommtn.png",
-                              ),
+                          ),
+                          Container(
+                            height: 20,
+                            width: 40,
+                            child: Image.asset(
+                              "assets/img/mommtn.png",
                             ),
-                            Container(
-                              height: 20,
-                              width: 40,
-                              child: Image.asset(
-                                "assets/img/moovm.png",
-                                fit: BoxFit.cover,
-                              ),
+                          ),
+                          Container(
+                            height: 20,
+                            width: 40,
+                            child: Image.asset(
+                              "assets/img/moovm.png",
+                              fit: BoxFit.cover,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      CustomButton(
-                        text: "          Valider",
-                        color: kBlue3Color,
-                        icon: Icon(null),
-                        onPress: () {
-                          print('Validate button is pressed in epargne 1');
-                          print("Navigue to Sécurity screen");
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (BuildContext context) {
-                                return Epargne2();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      SizedBox(height: 10),
-                    ],
-                  ),
+                    ),
+                    CustomButton(
+                      text: "          Valider",
+                      color: kBlue3Color,
+                      icon: Icon(null),
+                      onPress: () {
+                        print('Validate button is pressed in epargne 1');
+                        print("Navigue to Sécurity screen");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return Epargne2();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 10),
+                  ],
                 ),
               ),
             ),

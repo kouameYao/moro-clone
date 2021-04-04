@@ -18,7 +18,11 @@ class _AuthentificationState extends State<Authentification> {
         child: Column(
           children: [
             AuthHeaderContainer(size: size),
-            InscriptionContent(),
+            Container(
+              width: double.infinity,
+              height: size.height - size.height / 2.5,
+              child: InscriptionContent(),
+            ),
           ],
         ),
       ),

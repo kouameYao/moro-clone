@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/detail_carte.dart';
+import 'package:solution_moro/screens/epargne5.dart';
 import 'package:solution_moro/widgets/credit_card.dart';
 
 class Epargne3 extends StatefulWidget {
@@ -14,6 +16,7 @@ class _Epargne3State extends State<Epargne3> {
     kOrangeColor,
     kBlue3Color,
     kGreenColor,
+    kBtnBgColor,
   ];
 
   int colorIndex = -1;
@@ -134,19 +137,45 @@ class _Epargne3State extends State<Epargne3> {
                 ),
                 child: Center(
                   child: ListView.builder(
-                      itemCount: 6,
-                      itemBuilder: (context, index) {
-                        colorIndex++;
-                        print(colorIndex);
-                        if (colorIndex == _colors.length) {
-                          colorIndex = 0;
-                        }
-                        return CreditCard(
-                          size: size,
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      colorIndex++;
+                      print(colorIndex);
+                      if (colorIndex == _colors.length) {
+                        colorIndex = 0;
+                      }
+                      // Implementer le composant Dissmissible ici. Puis exécuter une action de chaque cote
+                      return GestureDetector(
+                        onTap: () {
+                          print("Navigue pour rechargement : Epargne 5");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return Epargne5();
+                              },
+                            ),
+                          );
+                        },
+                        onDoubleTap: () {
+                          print("Navigue pour Detail carte");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return DetailCarte();
+                              },
+                            ),
+                          );
+                        },
+                        child: CreditCard(
+                          heightSize: size.height / 5.5,
                           colors: _colors,
                           colorIndex: colorIndex,
-                        );
-                      }),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ),

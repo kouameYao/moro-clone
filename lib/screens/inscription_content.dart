@@ -12,6 +12,7 @@ class InscriptionContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           margin: EdgeInsets.only(top: 30, bottom: 40),
@@ -53,6 +54,7 @@ class InscriptionContent extends StatelessWidget {
           height: 35,
           child: ElevatedButton(
             style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(kBtnBlueColor),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),

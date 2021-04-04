@@ -19,66 +19,77 @@ class SecuriteContent extends StatelessWidget {
         children: [
           AuthHeaderContainer(size: size),
           Container(
-            margin: EdgeInsets.only(top: 30, bottom: 40),
-            child: Text(
-              "Sécurité",
-              style: TextStyle(
-                color: kTextBlueColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
-            ),
-          ),
-          TextFieldContainer(
-            color: kWhiteColor,
-            child: TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                hintText: "************",
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-          SizedBox(height: 20),
-          TextFieldContainer(
-            color: kWhiteColor,
-            child: TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                hintText: "Confirmation",
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: 35,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+            width: double.infinity,
+            height: size.height - size.height / 2.5,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 30, bottom: 40),
+                  child: Text(
+                    "Sécurité",
+                    style: TextStyle(
+                      color: kTextBlueColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
-              ),
-              onPressed: () {
-                print("Navigue to Sécurity screen");
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return AvantageContent();
-                }));
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Valider"),
-                  SizedBox(width: 20),
-                  Icon(Icons.login),
-                ],
-              ),
+                TextFieldContainer(
+                  color: kWhiteColor,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      hintText: "************",
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                TextFieldContainer(
+                  color: kWhiteColor,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      hintText: "Confirmation",
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: 35,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(kBtnBlueColor),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      print("Navigue to Sécurity screen");
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return AvantageContent();
+                      }));
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Valider"),
+                        SizedBox(width: 20),
+                        Icon(Icons.login),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
         ],

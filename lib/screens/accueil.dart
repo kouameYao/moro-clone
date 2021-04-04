@@ -4,6 +4,7 @@ import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/screens/envoi_reception.dart';
 import 'package:solution_moro/screens/epargne1.dart';
+import 'package:solution_moro/screens/epargne3.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
 class Dashboard extends StatefulWidget {
@@ -127,6 +128,14 @@ class _DashboardState extends State<Dashboard> {
                     icon: Icon(Icons.credit_card),
                     onPress: () {
                       print("Go to Mes cartes screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Epargne3();
+                          },
+                        ),
+                      );
                     },
                   ),
                   BottomItem(

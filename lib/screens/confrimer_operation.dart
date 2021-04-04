@@ -4,7 +4,6 @@ import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/screens/envoi_reception.dart';
-import 'package:solution_moro/widgets/text_field_container.dart';
 
 class ConfirmerOperation extends StatefulWidget {
   @override
@@ -65,27 +64,27 @@ class _ConfirmerOperationState extends State<ConfirmerOperation> {
                       children: [
                         Image.asset(
                           "assets/icons/041-qr-code.png",
-                          width: 50,
-                          height: 50,
-                          // color: kBlue1Color,
+                          width: 70,
+                          height: 70,
                         ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Icon(
-                              Icons.person,
-                              color: kWhiteColor,
-                              size: 30,
-                            ),
-                            Text(
-                              'Esther Kouamé',
-                              style: TextStyle(
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.person,
+                                size: 35,
                                 color: kWhiteColor,
                               ),
-                            ),
-                          ],
+                              Text(
+                                "Esther Kouamé",
+                                style: TextStyle(
+                                  color: kWhiteColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -144,7 +143,7 @@ class _ConfirmerOperationState extends State<ConfirmerOperation> {
                           ),
                         ),
                         CustomButton(
-                          text: "             Terminé",
+                          text: "             Envoyer ou recevoir ?",
                           onPress: () {
                             Navigator.push(
                               context,

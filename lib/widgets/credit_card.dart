@@ -5,23 +5,24 @@ import 'package:solution_moro/widgets/card_element.dart';
 class CreditCard extends StatelessWidget {
   const CreditCard({
     Key key,
-    @required this.size,
     @required List colors,
     @required this.colorIndex,
+    this.heightSize,
   })  : _colors = colors,
         super(key: key);
 
-  final Size size;
   final List _colors;
   final int colorIndex;
+  final double heightSize;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(
           width: size.width * 0.7,
-          height: size.height / 5.5,
+          height: heightSize,
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.only(top: 5),
           decoration: BoxDecoration(

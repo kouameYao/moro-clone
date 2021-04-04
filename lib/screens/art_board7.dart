@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
-import 'package:solution_moro/screens/art_board8.dart';
+import 'package:solution_moro/screens/detail_carte.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
 class ArtBoard7 extends StatefulWidget {
@@ -159,7 +159,7 @@ class _ArtBoard7State extends State<ArtBoard7> {
                               context,
                               MaterialPageRoute(
                                 builder: (BuildContext context) {
-                                  return ArtBoard8();
+                                  return DetailCarte();
                                 },
                               ),
                             );

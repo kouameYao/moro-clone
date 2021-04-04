@@ -7,12 +7,12 @@ import 'package:solution_moro/screens/epargne3.dart';
 import 'package:solution_moro/widgets/card_element.dart';
 import 'package:solution_moro/widgets/text_field_container.dart';
 
-class ArtBoard8 extends StatefulWidget {
+class DetailCarte extends StatefulWidget {
   @override
-  _ArtBoard8State createState() => _ArtBoard8State();
+  _DetailCarteState createState() => _DetailCarteState();
 }
 
-class _ArtBoard8State extends State<ArtBoard8> {
+class _DetailCarteState extends State<DetailCarte> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

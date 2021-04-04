@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/custom_button.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/envoi_reception.dart';
 
 class ReceptionQrCode3 extends StatefulWidget {
   @override
@@ -107,9 +108,19 @@ class _ReceptionQrCode3State extends State<ReceptionQrCode3> {
             ),
             SizedBox(height: 40),
             CustomButton(
-              text: "Envoyer ou Recevoir",
+              text: "            Envoyer ou Recevoir ?",
+              color: kBlue3Color,
+              icon: Icon(null),
               onPress: () {
-                print("Envoyer Recevoir in Sammary screen");
+                print("Envoyer Recevoir in Sammary screen is pressed");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return EnvoiReception();
+                    },
+                  ),
+                );
               },
             ),
             Expanded(child: Container()),
