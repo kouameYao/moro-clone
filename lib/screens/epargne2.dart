@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/accueil.dart';
+import 'package:solution_moro/screens/accueil.dart';
 import 'package:solution_moro/screens/art_board6.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
@@ -113,7 +115,16 @@ class _Epargne2State extends State<Epargne2> {
                     text: "Epargner",
                     icon: Icon(Icons.pending_actions),
                     onPress: () {
-                      print("Go to Mes cartes screen");
+                      print("Navigue to ArtBoard screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            // return Accueil1();
+                            return Accueil1();
+                          },
+                        ),
+                      );
                     },
                   ),
                   BottomItem(
@@ -121,7 +132,15 @@ class _Epargne2State extends State<Epargne2> {
                         "ma carte",
                     icon: Icon(Icons.send_to_mobile),
                     onPress: () {
-                      print("Go to Send screen");
+                      print("Navigue to ArtBoard screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Accueil1();
+                          },
+                        ),
+                      );
                     },
                   ),
                   BottomItem(
@@ -129,7 +148,15 @@ class _Epargne2State extends State<Epargne2> {
                         "recevoir",
                     icon: Icon(Icons.credit_card),
                     onPress: () {
-                      print("Go to Send screen");
+                      print("Navigue to ArtBoard screen");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Accueil1();
+                          },
+                        ),
+                      );
                     },
                   ),
                 ],

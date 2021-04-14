@@ -39,7 +39,7 @@ class _CodePinScreenState extends State<CodePinScreen> {
                   onTap: () {
                     print("Navigue to Dashbord screen");
                     isForConfirmation
-                        ? Navigator.push(
+                        ? Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (BuildContext context) {
@@ -47,11 +47,11 @@ class _CodePinScreenState extends State<CodePinScreen> {
                               },
                             ),
                           )
-                        : Navigator.push(
+                        : Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (BuildContext context) {
-                                return Dashboard();
+                                return Accueil1();
                               },
                             ),
                           );

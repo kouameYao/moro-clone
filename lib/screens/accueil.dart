@@ -7,12 +7,12 @@ import 'package:solution_moro/screens/epargne1.dart';
 import 'package:solution_moro/screens/epargne3.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
-class Dashboard extends StatefulWidget {
+class Accueil1 extends StatefulWidget {
   @override
-  _DashboardState createState() => _DashboardState();
+  _Accueil1State createState() => _Accueil1State();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _Accueil1State extends State<Accueil1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

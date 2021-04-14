@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
-import 'package:solution_moro/screens/art_board7.dart';
 import 'package:solution_moro/screens/code_pin.dart';
 
 class Accueil2 extends StatefulWidget {
