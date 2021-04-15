@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:solution_moro/screens/generer_qrCode.dart';
 import 'package:solution_moro/screens/reception_qrCode1.dart';
 import 'package:solution_moro/screens/scan_qrCode.dart';
 
@@ -15,7 +16,6 @@ class _EnvoiReceptionState extends State<EnvoiReception> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -126,7 +126,7 @@ class _EnvoiReceptionState extends State<EnvoiReception> {
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return ScanQrCode();
+                          return ScanQRCode();
                         },
                       ),
                     );
@@ -148,7 +148,15 @@ class _EnvoiReceptionState extends State<EnvoiReception> {
                   text: "Qr code",
                   icon: Icon(Icons.qr_code),
                   press: () {
-                    print("Qr code pressed");
+                    print("Navigue to generate Qr Code");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return GenerateQrCode();
+                        },
+                      ),
+                    );
                   },
                 ),
               ],
@@ -204,7 +212,8 @@ class OperationItem extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 8),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [icon, SizedBox(width: 8), Text(text)],
             ),
           ),

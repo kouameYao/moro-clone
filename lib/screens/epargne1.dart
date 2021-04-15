@@ -16,7 +16,6 @@ class _Epargne1State extends State<Epargne1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: Column(
         children: [
           Stack(

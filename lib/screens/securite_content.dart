@@ -14,13 +14,11 @@ class SecuriteContent extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: Column(
         children: [
           AuthHeaderContainer(size: size),
           Container(
             width: double.infinity,
-            height: size.height - size.height / 2.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

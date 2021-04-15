@@ -3,7 +3,6 @@ import 'package:solution_moro/components/header_container.dart';
 import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/components/bottom_bar.dart';
 import 'package:solution_moro/screens/accueil.dart';
-import 'package:solution_moro/screens/accueil.dart';
 import 'package:solution_moro/screens/art_board6.dart';
 import 'package:solution_moro/widgets/bottom_item.dart';
 
@@ -17,7 +16,6 @@ class _Epargne2State extends State<Epargne2> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [

@@ -12,7 +12,7 @@ class AuthHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: size.height / 3,
+      height: size.height / 2.5,
       decoration: BoxDecoration(
         color: kAuthBlueColor,
       ),

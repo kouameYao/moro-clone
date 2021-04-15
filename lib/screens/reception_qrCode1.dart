@@ -24,7 +24,6 @@ class _ReceptionQrCode1State extends State<ReceptionQrCode1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [

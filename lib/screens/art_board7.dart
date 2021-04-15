@@ -15,7 +15,6 @@ class _ArtBoard7State extends State<ArtBoard7> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: SafeArea(
         child: Column(
           children: [

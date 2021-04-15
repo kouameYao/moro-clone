@@ -1,92 +1,116 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/components/bottom_bar.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:solution_moro/constants.dart';
-import 'package:solution_moro/screens/accueil2.dart';
+import 'package:solution_moro/screens/code_pin.dart';
 
-class ScanQrCode extends StatefulWidget {
+class ScanQRCode extends StatefulWidget {
+  ScanQRCode({Key key}) : super(key: key);
+
   @override
-  _ScanQrCodeState createState() => _ScanQrCodeState();
+  _ScanQRCodeState createState() => _ScanQRCodeState();
 }
 
-class _ScanQrCodeState extends State<ScanQrCode> {
+class _ScanQRCodeState extends State<ScanQRCode> {
+  String qrCode = 'Données inconnues ';
+
+  @override
+  void initState() {
+    super.initState();
+    scanQrCode();
+  }
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
-      body: SafeArea(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: Image.asset(
-                    "assets/img/logoMoroblanc.png",
-                    width: 75,
-                    height: 75,
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                qrCode,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: kBlue3Color,
+                  fontWeight: FontWeight.bold,
                 ),
-                Container(
-                  width: 35,
-                  height: 35,
-                  margin: const EdgeInsets.only(right: 10.0),
-                  decoration: BoxDecoration(
-                      color: kWhiteColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Image.asset(
-                    "assets/img/userPhoto.png",
-                    width: 30,
-                    height: 30,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(child: Container()),
-            Container(
-              width: size.width,
-              height: size.height / 2.2,
-              decoration: BoxDecoration(
-                color: kQrContainer,
-              ),
-              child: Image.asset(
-                "assets/icons/041-qr-code.png",
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 8,
             ),
-            InkWell(
-              onTap: () {
-                print('qr code scanned');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return Accueil2();
-                    },
+            Text(
+              '- - -',
+              style: TextStyle(
+                fontSize: 16,
+                color: kBlue3Color,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: 35,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(kBtnBlueColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
                   ),
-                );
-              },
-              splashColor: kBlue3Color,
-              borderRadius: BorderRadius.circular(40),
-              child: Container(
-                width: 60,
-                height: 60,
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: kRedColor,
-                  borderRadius: BorderRadius.circular(50),
+                ),
+                onPressed: () {
+                  print("Navigue to Sécurity screen for confirmation");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return CodePinScreen(
+                            confirmation:
+                                "Confirmation à la demande après scan de Qr Code");
+                      },
+                    ),
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Continuer"),
+                    SizedBox(width: 20),
+                    Icon(Icons.login),
+                  ],
                 ),
               ),
             ),
-            Expanded(child: Container()),
-            BottomBar(),
           ],
         ),
       ),
     );
+  }
+
+  Future<void> scanQrCode() async {
+    try {
+      final qrCode = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666',
+        'Annuler',
+        true,
+        ScanMode.QR,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        this.qrCode = qrCode;
+      });
+    } on PlatformException {
+      qrCode = 'Echec de recuperation de données';
+    }
   }
 }

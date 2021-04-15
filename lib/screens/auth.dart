@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:solution_moro/constants.dart';
 import 'package:solution_moro/widgets/auth_header.dart';
 import 'package:solution_moro/screens/inscription_content.dart';
 
@@ -13,14 +12,12 @@ class _AuthentificationState extends State<Authentification> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kBtnBgColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
             AuthHeaderContainer(size: size),
             Container(
               width: double.infinity,
-              height: size.height - size.height / 2.5,
               child: InscriptionContent(),
             ),
           ],

@@ -19,11 +19,11 @@ class AvantageContent extends StatelessWidget {
           AuthHeaderContainer(size: size),
           Container(
             width: double.infinity,
-            height: size.height - size.height / 2.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  margin: EdgeInsets.only(top: 30, bottom: 20),
                   child: Text(
                     "Nos Avantages",
                     style: TextStyle(
