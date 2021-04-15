@@ -10,12 +10,6 @@ class Epargne5 extends StatefulWidget {
 }
 
 class _Epargne5State extends State<Epargne5> {
-  List _colors = [
-    kOrangeColor,
-    kBlue3Color,
-    kGreenColor,
-  ];
-
   int colorIndex = -1;
 
   @override
