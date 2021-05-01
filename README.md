@@ -2,7 +2,7 @@
 
 Application de gestion de portefeuille électronique
 
-## Pourquoi Moro
+## Pourquoi Moro et qu'offre Moro
 
 Ce projet a pour but de...
 
